@@ -3,6 +3,7 @@ import React from 'react';
 import LoginForm from '../components/login.form';
 import { Home } from '../components/home';
 import Demo from '../components/demo';
+import UsersPage from './users.page';
 
 export function Index() {
 	// uygulamadaki bütün routelar -> dışarıdan props olarak acalacağımız model
@@ -23,6 +24,10 @@ export function Index() {
 			url: '/demo1',
 			component: Demo,
 		},
+		{
+			url:'/users',
+			component:UsersPage
+		}
 	];
 
 	const numbers = [1, 2, 3, 4];
