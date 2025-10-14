@@ -6,12 +6,12 @@
 // Componentler JSX döner
 // jsx içerisinde tek bir root element olmak zorunda
 
-import React from "react";
+import React from 'react';
 
 // Not: index.tsx dosya ismi küçük olabilir fakat component simi index diye tanımlanamaz Index olmalı.
 
 // Fragment : <> </> (sadece jsx de kullanılır)
-export function Index() {
+export function Home() {
 	// Değişkenler
 	// Sabitler
 	// Fonksiyonlar
@@ -25,7 +25,7 @@ export function Index() {
 		setVersion('React 20');
 	};
 	// Not ekranda birşey değişmiyorsa render alınmaz.
-	console.log('Index component render edildi');
+	console.log('Index component render edildi', version);
 	// const değişkeni sabit değerler için kullanılır
 	// let değişkeni değişken değerler için kullanılır
 	// var değişkeni artık kullanılmıyor
@@ -43,3 +43,5 @@ export function Index() {
 		</>
 	);
 }
+
+// debug -> before mount : console.log('Index component render edildi', version); -> return -> after mount handleClick -> setRandom -> call

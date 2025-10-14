@@ -7,6 +7,11 @@ function InputText({ value }: { value?: string }) {
 	// Input text kaybetmemk için bir state açtık
 	const [textValue, setTextValue] = React.useState<string>(value || '');
 
+	if (value && value.length > 12) {
+		setVisibleText(true);
+		setMessage('Text too long');
+	}
+
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		console.log('input-value', event.target.value);
 		setTextValue(event.target.value);
@@ -39,12 +44,15 @@ function InputText({ value }: { value?: string }) {
 	}
 	// 12 karakterden uzun değilse sadece input göster
 	return (
-		<input
-			value={textValue}
-			placeholder="pls typing"
-			onChange={handleChange}
-			type="text"
-		/>
+		<>
+			<div>{message}</div>
+			<input
+				value={textValue}
+				placeholder="pls typing"
+				onChange={handleChange}
+				type="text"
+			/>
+		</>
 	);
 }
 
